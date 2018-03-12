@@ -1,5 +1,6 @@
 package com.wordpress.cv14site.cmart
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
@@ -30,5 +31,22 @@ class MainActivity : AppCompatActivity() {
         // Display the new value in the text view.
         textView.text = count.toString();
 
+    }
+
+    fun randomMe(view: View){
+        // Create an Intent to start the second activity
+        val randomIntent = Intent(this, SeconAct::class.java)
+
+        // Get the current value of the text view.
+        val countString = textView.text.toString()
+
+        // Convert the count to an int
+        val count = Integer.parseInt(countString)
+
+        // Add the count to the extras for the Intent.
+        randomIntent.putExtra(SeconAct.TOTAL_COUNT, count)
+
+        // Start the new activity.
+        startActivity(randomIntent)
     }
 }
