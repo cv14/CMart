@@ -4,14 +4,28 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
+import android.widget.ArrayAdapter
+import android.widget.ListView
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
+
 class MainActivity : AppCompatActivity() {
+
+    private var mDrawerList: ListView? = null
+    private var mAdapter: ArrayAdapter<String>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        mDrawerList = findViewById<ListView>(R.id.navList)
+
+    }
+
+    private fun addDrawerItems() {
+        val osArray = arrayOf("Android", "iOS", "Windows", "OS X", "Linux")
+        mAdapter = ArrayAdapter(this, android.R.layout.simple_list_item_1, osArray)
+        mDrawerList!!.setAdapter(mAdapter)
     }
 
     fun toastMe(view: View) {
