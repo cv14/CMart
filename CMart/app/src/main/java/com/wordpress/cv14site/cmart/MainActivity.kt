@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         mDrawerList = findViewById<ListView>(R.id.navList)
-
+        addDrawerItems()
     }
 
     private fun addDrawerItems() {
