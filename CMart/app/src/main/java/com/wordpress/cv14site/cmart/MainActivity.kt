@@ -18,9 +18,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        mDrawerList = findViewById<ListView>(R.id.navList)
+        mDrawerList = findViewById(R.id.navList)
         addDrawerItems()
     }
+
 
     private fun addDrawerItems() {
         val osArray = arrayOf("Android", "iOS", "Windows", "OS X", "Linux")
