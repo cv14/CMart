@@ -18,7 +18,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        mDrawerList = findViewById(R.id.navList)
+        mDrawerList = this.findViewById(R.id.navList)
         addDrawerItems()
     }
 
